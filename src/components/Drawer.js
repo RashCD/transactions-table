@@ -1,7 +1,7 @@
 import MuiDrawer from '@material-ui/core/Drawer';
 import { styled } from '@material-ui/core/styles';
 
-const drawerWidth = 200;
+const drawerWidth = 180;
 const drawerPaddingTop = 64;
 
 const Drawer = styled(MuiDrawer, {

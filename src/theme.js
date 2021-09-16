@@ -14,6 +14,9 @@ const theme = createTheme({
     textGray: '#7C7C7C',
     gray: '#C4C4C4',
   },
+  typography: {
+    fontFamily: ['Open Sans'],
+  },
 });
 
 export default theme;

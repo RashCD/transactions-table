@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -49,8 +50,25 @@ const SidebarItem = [
   },
 ];
 
+const useStyles = makeStyles((theme) => ({
+  text: { fontSize: 12, fontWeight: 600, lineHeight: '16.34px' },
+  icon: { minWidth: 0, marginRight: 15 },
+  topGap: { marginTop: 33 },
+  leftGap: { paddingLeft: 16 },
+  selected: {
+    '&.Mui-selected': {
+      backgroundColor: '#90abff',
+      width: '93%',
+      borderTopRightRadius: '5px',
+      borderBottomRightRadius: '5px',
+    },
+  },
+}));
+
 const Sidebar = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const classes = useStyles();
 
   const onItemClick = (id) => setSelectedIndex(id);
 
@@ -61,26 +79,20 @@ const Sidebar = (props) => {
           <ListItem
             key={index}
             button
-            style={Object.assign(
+            className={`${classes.selected} ${
               index === 3 || index === 5 || index === 7
-                ? {
-                    marginTop: 33,
-                  }
-                : {},
-              { paddingLeft: 20 }
-            )}
+                ? classes.topGap
+                : classes.leftGap
+            }`}
             selected={selectedIndex === index}
             onClick={() => onItemClick(index)}
           >
-            <ListItemIcon style={{ minWidth: 0, marginRight: 12 }}>
+            <ListItemIcon className={classes.icon}>
               <IconComponent color="secondary" />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Typography
-                  color="secondary"
-                  style={{ fontSize: 12, fontWeight: 600 }}
-                >
+                <Typography color="secondary" className={classes.text}>
                   {text}
                 </Typography>
               }
