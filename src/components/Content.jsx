@@ -4,7 +4,9 @@ import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
 import Table from './Table';
+import FilterOptions from './FilterOptions';
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -14,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
   container: { marginTop: 20, marginBottom: 4 },
   paper: {
-    p: 2,
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -29,7 +30,13 @@ const Content = () => {
       <Toolbar />
       <Container maxWidth="lg" className={classes.container}>
         <Paper className={classes.paper}>
-          <Table />
+          <Box p={2}>
+            <FilterOptions />
+          </Box>
+          <Divider />
+          <Box px={2}>
+            <Table />
+          </Box>
         </Paper>
       </Container>
     </Box>

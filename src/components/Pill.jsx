@@ -42,7 +42,6 @@ const Pill = (props) => {
     return (
       <Button
         variant="contained"
-        color="success"
         startIcon={<DoneIcon className={classes.icon} />}
         className={classes.button}
         disableElevation
@@ -58,7 +57,6 @@ const Pill = (props) => {
     return (
       <Button
         variant="contained"
-        color="warning"
         startIcon={<HourglassIcon className={classes.icon} />}
         className={classes.button}
         disableElevation
@@ -74,7 +72,6 @@ const Pill = (props) => {
     return (
       <Button
         variant="contained"
-        color="error"
         startIcon={<ClearIcon className={classes.icon} />}
         className={classes.button}
         disableElevation
@@ -89,7 +86,6 @@ const Pill = (props) => {
   return (
     <Button
       variant="contained"
-      color="defaultLight"
       startIcon={<UndoIcon className={classes.icon} />}
       className={classes.button}
       disableElevation

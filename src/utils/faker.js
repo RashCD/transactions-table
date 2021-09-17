@@ -1,26 +1,22 @@
 import { random, finance, datatype, date } from 'faker';
+import {
+  statusTypeConstant,
+  paymentTypeConstant,
+  channelTypeConstant,
+} from './constants';
 
 export const generateStatus = () => {
-  const exampleStatus = [
-    'Success',
-    'Paid',
-    'Pending',
-    'Failed',
-    'Refunded',
-    'Reversed',
-    'Settled',
-    'Completed',
-  ];
+  const exampleStatus = Object.values(statusTypeConstant);
   return random.arrayElement(exampleStatus);
 };
 
 export const generateType = () => {
-  const exampleType = ['Direct', 'Invoice', 'Disbursement'];
+  const exampleType = Object.values(paymentTypeConstant);
   return random.arrayElement(exampleType);
 };
 
 export const generateBank = () => {
-  const exampleBanks = ['eWallet', 'Bank', 'Cards'];
+  const exampleBanks = Object.values(channelTypeConstant);
   return random.arrayElement(exampleBanks);
 };
 

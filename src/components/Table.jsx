@@ -13,6 +13,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { useTable, useSortBy } from 'react-table';
 import makeData from '../utils/makeData';
 import Pill from './Pill';
+import { statusTypeConstant } from '../utils/constants';
 
 const useStyles = makeStyles((theme) => ({
   icon: { fontSize: 15 },
@@ -78,14 +79,16 @@ const Table = () => {
 
   const statusType = (value) => {
     switch (value) {
-      case 'Settled':
-      case 'Completed':
-      case 'Paid':
-      case 'Success':
+      case statusTypeConstant.SETTLED:
+      case statusTypeConstant.COMPLETED:
+      case statusTypeConstant.PAID:
+      case statusTypeConstant.SUCCESS:
         return 'success';
-      case 'Pending':
+      case statusTypeConstant.PENDING:
+      case statusTypeConstant.REFUNDED:
+      case statusTypeConstant.REVERSED:
         return 'pending';
-      case 'Failed':
+      case statusTypeConstant.FAILED:
         return 'fail';
       default:
         return undefined;
