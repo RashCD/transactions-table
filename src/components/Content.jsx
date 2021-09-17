@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import Table from './Table';
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -27,7 +28,9 @@ const Content = () => {
     <Box component="main" className={classes.boxContainer}>
       <Toolbar />
       <Container maxWidth="lg" className={classes.container}>
-        <Paper className={classes.paper}>TEST</Paper>
+        <Paper className={classes.paper}>
+          <Table />
+        </Paper>
       </Container>
     </Box>
   );
