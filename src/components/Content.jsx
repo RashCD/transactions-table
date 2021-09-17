@@ -7,6 +7,9 @@ import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import Table from './Table';
 import FilterOptions from './FilterOptions';
+import DateOptions from './DateOptions';
+import Search from './Search';
+import ExportButton from './ExportButton';
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -20,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     width: '100%',
   },
+  top: {
+    '& > *': {
+      marginRight: '10px',
+    },
+  },
 }));
 
 const Content = () => {
@@ -30,8 +38,11 @@ const Content = () => {
       <Toolbar />
       <Container maxWidth="lg" className={classes.container}>
         <Paper className={classes.paper}>
-          <Box p={2}>
+          <Box display="flex" flexDirection="row" p={2} className={classes.top}>
             <FilterOptions />
+            <DateOptions />
+            <Search />
+            <ExportButton />
           </Box>
           <Divider />
           <Box px={2}>

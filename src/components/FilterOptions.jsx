@@ -85,7 +85,7 @@ const FilterOptions = () => {
   const open = Boolean(anchorEl);
 
   return (
-    <Box display="flex">
+    <Box display="flex" flex={1} style={{ height: '40px' }}>
       <Button
         variant="outlined"
         color="default"
